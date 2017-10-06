@@ -1,0 +1,48 @@
+﻿@model List<LaserArt.Models.CardModel>
+@{
+    ViewBag.Title = "OrderDetails";
+}
+
+<div class="jumbotron">
+
+    @foreach (var item in Model)
+    {
+        <div class="row orderItem" id="@(item.product.Id+"itemCard")">
+            <div class="row">
+                <div class="col-md-3">
+                    <p>Название</p>
+                </div>
+                
+                <div class="col-md-2">
+                    <p>Кол-во</p>
+                </div>
+                <div class="col-md-2">
+                    <p>Цена</p>
+                </div>
+             
+            </div>
+            <hr class="productPagehr" />
+            <div class="row ">
+                <div class="col-md-3">
+                    <p>@item.product.ProductTitle</p>
+                    <img src="@item.product.ImageSource" class="imageHeader" />
+                </div>
+               
+                <div class="col-md-2">
+                    <p>@item.ProductQuantity</p>
+                </div>
+                <div class="col-md-2">
+                    <p>@item.product.Price руб.</p>
+                    @if (@item.product.PriceDiscounted != 0)
+                {
+                        <del> @item.product.PriceDiscounted</del>
+                    }
+                </div>
+               
+            </div>
+        </div>
+        <hr />
+    }
+   
+</div>
+
