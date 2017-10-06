@@ -120,4 +120,7 @@
   <data name="ApplicationName" xml:space="preserve">
     <value>Սուշի</value>
   </data>
+  <data name="Basket" xml:space="preserve">
+    <value>Զամբյուղ</value>
+  </data>
 </root>

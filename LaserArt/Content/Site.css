@@ -107,16 +107,17 @@ textarea {
 .table-striped > tbody > tr:nth-child(odd) > th {
     background-color: transparent !important;
 }
-    
 
+.headerText {
+    line-height: 60px;
+    text-decoration: none;
+    color: white;
+}
 .top-menu {
-    background-color: black;
-    padding: 20px 0 20px 20px;
+    background-color: rgba(58,58,58, 0.69);
+    padding-left: 20px;
     color: #ffffff;
     margin-bottom: 15px !important;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    margin-top: 80px;
     margin-left: 0 !important;
     margin-right: 0 !important;
 }
@@ -221,8 +222,8 @@ textarea {
 }
 .cardIcon{
     width:auto;
-    height:16px;
-    margin-right:10px;
+    height:30px;
+    margin:10px;
 }
 .item-div
 {
@@ -231,4 +232,8 @@ textarea {
 .item-div:hover
 {
     border:1px solid #d1d1d1;
+}
+.left-sidebar
+{
+    position:fixed;
 }

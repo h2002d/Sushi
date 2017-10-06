@@ -11,9 +11,9 @@ namespace LaserArt
     {
         public static List<Languages> AvailableLanguages = new List<Languages>
                     {
-                            new Languages{ LangFullName = "Հայերեն", LangCultureName = "am"},
-                            new Languages{ LangFullName = "Русский", LangCultureName = "ru"},
-                            new Languages{ LangFullName = "English", LangCultureName = "en"}
+                            new Languages{ LangFullName = "AM", LangCultureName = "am"},
+                            new Languages{ LangFullName = "RU", LangCultureName = "ru"},
+                            new Languages{ LangFullName = "EN", LangCultureName = "en"}
                     };
 
         public static bool IsLanguageAvailable(string lang)

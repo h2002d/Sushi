@@ -120,4 +120,7 @@
   <data name="ApplicationName" xml:space="preserve">
     <value>Суши</value>
   </data>
+  <data name="Basket" xml:space="preserve">
+    <value>Корзина</value>
+  </data>
 </root>

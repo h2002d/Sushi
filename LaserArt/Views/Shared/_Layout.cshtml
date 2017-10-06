@@ -2,26 +2,25 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Re:Store Family ── Сеть фирменых магазинов техники Apple и Samsung  в Москве. Официальный представитель. Оригинальная  продукция Apple и Samsung</title>
+
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-
-    <div style="width:90%; margin:0 auto;">
-       
-            <div class="list-inline top-menu row">
-                <div class="col-md-3" style="font-size:30px;" title="Re:Store Family ── Сеть фирменых магазинов техники Apple и Samsung  в Москве. Официальный представитель. Оригинальная  продукция Apple и Samsung"><a href="/" style="text-decoration:none; color:white;">@LaserArt.Resource.ApplicationName</a></div>
-                @* Here I will add Language Switcher *@
-                @{
-                    foreach (var i in LaserArt.SiteLanguages.AvailableLanguages)
-                    {
-                        @Html.ActionLink(i.LangFullName, "ChangeLanguage", "Home", new { lang = i.LangCultureName }, null) <text>&nbsp;</text>
-                    }
+    <div class="list-inline top-menu row">
+        <div class="col-md-3" style="font-size:30px;"><a href="/" style="text-decoration:none; color:white;">@LaserArt.Resource.ApplicationName</a></div>
+        <div class="col-md-6">
+            @* Here I will add Language Switcher *@
+            @{
+                foreach (var i in LaserArt.SiteLanguages.AvailableLanguages)
+                {
+                    @Html.ActionLink(i.LangFullName, "ChangeLanguage", "Home", new { lang = i.LangCultureName }, new { @class = "headerText" }) <text>&nbsp;</text>
                 }
-                @if (Request.Cookies["Cart"] != null)
+            }
+        </div>
+        @if (Request.Cookies["Cart"] != null)
             {
                 HttpCookie cookieOld = Request.Cookies["Cart"];
 
@@ -34,131 +33,120 @@
             {
                 ViewBag.CardCount = 0;
             }
-                @if (!Request.Browser.IsMobileDevice)
+
+        <div class=" col-md-2 card-Header" style="line-height:60px; background-color:rgba(194, 0, 0, 0.65)">@LaserArt.Resource.Basket<img class="cardIcon" src="~/images/cardBasketIcon.png" />   <u>@ViewBag.CardCount</u></a></div>
+
+        @*<div class=" col-md-3">
+                <div class="inner-addon right-addon">
+                    <i class="glyphicon glyphicon-search" style="color:black"></i>
+                    <input type="text" id="searchArea" class="form-control" placeholder="Поиск..." />
+                </div>
+            </div>*@
+
+
+
+
+
+    </div>
+    <div style="position:absolute; width:100%;top:0;z-index:-9999999999;">
+        <div class="w3-content w3-section">
+            @foreach (var item in ViewBag.Sales)
             {
-                    <div class=" col-md-2 header-text" style="padding-top:5px;">
-                        <span class="headerSpan">Москва</span>
-                       
-                        <br />
-                        <span style="font-size:10px;">  московская область</span>
-
-                    </div>
-                    <div class=" col-md-2 header-text">                        
-                        <span class="headerSpan">Справочная служба</span>
-                         <br />
-                        <span style="font-weight:600 ;font-size:15px;">8 (800) 700-19-44</span>
-                          
-                            <br />
-                        <span style="font-size:10px;"> круглосуточно, без выходных</span>
-                           
-                    </div>
-                    <div class=" col-md-2" style="padding:7px"> <a href="/home/card"><img class="cardIcon" src="~/images/cardBasketIcon.png" />Корзина: <u>@ViewBag.CardCount</u> шт.</a></div>
-
-                    <div class=" col-md-3">
-                        <div class="inner-addon right-addon">
-                            <i class="glyphicon glyphicon-search" style="color:black"></i>
-                            <input type="text" id="searchArea" class="form-control" placeholder="Поиск..." />
-                        </div>
-                    </div>
-
-                    
-
-                }
-
-            </div>
-            <div>
-                <div class="col-sm-3" style="padding:0;">
-                    <div class="sidebar-nav">
-                        <div class="navbar navbar-default" role="navigation">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
-                                    <span class="sr-only"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                                @if (Request.Browser.IsMobileDevice)
-                                {
-                                    <input type="text" id="searchArea" style="margin:5px; width:70%;" class="form-control" placeholder="Поиск..." />
-                                }
-                            </div>
-                            <div class="navbar-collapse collapse sidebar-navbar-collapse">
-                                <ul class="nav navbar-nav">
-                                    <li>@Html.ActionLink("Главная", "Index", "Home")</li>
-                                    @foreach (var item in ViewBag.Categories)
-                                    {
-                                        <li><a href="/home/category/@item.Id">@item.CategoryName</a></li>
-                                    }
-                                    <li>@Html.ActionLink("О нас", "About", "Home")</li>
-                                    <li>@Html.ActionLink("Связь", "Contact", "Home")</li>
-
-
-                                    <li>  <a href="/home/card">Корзина <u>@ViewBag.CardCount</u> шт.</a></li>
-
-                                    @if (this.User.IsInRole("Administrator"))
-                                    {
-                                        <li>@Html.ActionLink("Добавит продукт", "CreateProduct", "Home")</li>
-                                        <li>@Html.ActionLink("Добавит Категорию", "CreateCategory", "Home")</li>
-                                            <li>@Html.ActionLink("Заказы", "Order", "Admin")</li>
-                                            <li>@Html.ActionLink("Дизайнер", "Sales", "Home")</li>
-
-                                            @Html.Partial("_LoginPartial")
-                                    }
-
-                                </ul>
-
-                            </div><!--/.nav-collapse -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-9" style="padding:0 !important;">
-                    <div class="container body-content">
-                        @RenderBody()
-                        <hr style="border-top:1px solid #000000 !important;" />
-                        <footer style="margin-bottom:50px; font-size:10px;">
-
-                            <p>
-                                &copy; @DateTime.Now.Year - re:store-family Powered by <a href="https://www.facebook.com/novir">Novir+</a>
-                                <br />
-                                Электронная почта: internetshop.restore-family@mail.ru
-                                <br />
-                                Тел.: <phone>8 (800) 700-19-44</phone> (круглосуточно, пн-вс)
-                            </p>
-                        </footer>
-                    </div>
-                    <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
-
-
-                </div>
-                @if (!Request.Browser.IsMobileDevice)
-                {
-                    <div class="toolbar">
-                        <div class="toolbar-right">
-                            @if (Request.Cookies["Cart"] != null)
-                            {
-                                HttpCookie cookieOld = Request.Cookies["Cart"];
-
-                                var value = cookieOld.Value;
-                                var idList = Newtonsoft.Json.JsonConvert.DeserializeObject
-                                <List<LaserArt.Models.CardModel>>(value);
-                                ViewBag.CardCount = idList.Count;
-                            }
-                            else
-                            {
-                                ViewBag.CardCount = 0;
-                            }
-
-                            @*  <img class="cardIcon" src="~/images/cardBasketIcon.png" />*@
-                            <a href="/home/card">Корзина <u>@ViewBag.CardCount</u> шт.</a>
-                            <input type="button" class="btn btn-default footer-btn" onclick="orderBtnClick()" value="Оформить заказ" />
-
-                        </div>
-                    </div>
-                }
-            </div>
+                <a class="mySlides" href="@item.link">
+                    <img class="myslideImage" src="@item.image">
+                </a>
+            }
 
         </div>
-    
+    </div>
+
+    <div style="width:90%; margin:0 auto;">
+   
+        <div class="col-sm-2" style="padding:0;">
+            <div class="row">
+                <div class="col-md-12">
+
+                </div>
+            </div>
+            <div class="sidebar-nav @(this.User.IsInRole("Administrator")?"":"left-sidebar")" align="center">
+                <h2>MENU</h2>
+                <div class="navbar navbar-default" style="padding:0 30px 0 30px" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                            <span class="sr-only"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                      
+                    </div>
+                    <div class="navbar-collapse collapse sidebar-navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            @foreach (var item in ViewBag.Categories)
+                            {
+                                <li><a href="/home/category/@item.Id">@item.CategoryName</a></li>
+                            }
+                            @if (this.User.IsInRole("Administrator"))
+                            {
+                                <li>@Html.ActionLink("Добавит продукт", "CreateProduct", "Home")</li>
+                                <li>@Html.ActionLink("Добавит Категорию", "CreateCategory", "Home")</li>
+                                <li>@Html.ActionLink("Заказы", "Order", "Admin")</li>
+                                <li>@Html.ActionLink("Дизайнер", "Sales", "Home")</li>
+
+                                @Html.Partial("_LoginPartial")
+                            }
+
+                        </ul>
+
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-10" style="padding:0 !important;">
+            <div class="container body-content">
+                @RenderBody()
+                <hr style="border-top:1px solid #000000 !important;" />
+                <footer style="margin-bottom:50px; font-size:10px;">
+
+                    <p>
+                        &copy; @DateTime.Now.Year - Sushi Powered by <a href="https://www.facebook.com/novirarm">Novir+</a>
+                        <br />
+
+                        Հեռ.: <phone>8 (800) 700-19-44</phone> (շուրջօրյա)
+                    </p>
+                </footer>
+            </div>
+            <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
+
+
+        </div>
+    </div>
+    @*<div class="toolbar">
+        <div class="toolbar-right">
+            @if (Request.Cookies["Cart"] != null)
+            {
+                HttpCookie cookieOld = Request.Cookies["Cart"];
+
+                var value = cookieOld.Value;
+                var idList = Newtonsoft.Json.JsonConvert.DeserializeObject
+                <List<LaserArt.Models.CardModel>>(value);
+                ViewBag.CardCount = idList.Count;
+            }
+            else
+            {
+                ViewBag.CardCount = 0;
+            }
+
+            @*  <img class="cardIcon" src="~/images/cardBasketIcon.png" />            <a href="/home/card">Корзина <u>@ViewBag.CardCount</u> шт.</a>
+            <input type="button" class="btn btn-default footer-btn" onclick="orderBtnClick()" value="Оформить заказ" />
+
+        </div>
+    </div>*@
+
+
+
+  
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
@@ -200,14 +188,17 @@
             $('.product').click(function () {
                 window.location = "/home/product/" + $(this).attr('id');
             });
+            $('.card-Header').click(function () {
+                window.location = "/home/card/";
+            });
             $('.adminOrderRow').click(function () {
                 window.location = "/admin/orderdetails/?OrderId=" + $(this).parent().attr('id');
             });
             $('.orderSetStatus').click(function () {
                 var orderId = $(this).parent().parent().attr('id');
-                var status = $('input[name=orderStatus_' + orderId+']:checked').val();
+                var status = $('input[name=orderStatus_' + orderId + ']:checked').val();
                 alert('Статус изменен');
-                window.location = "/admin/ChangeOrderStatus/?orderId=" +orderId  + "&status=" + status;
+                window.location = "/admin/ChangeOrderStatus/?orderId=" + orderId + "&status=" + status;
             });
             $('.deleteProduct').click(function () {
                 var id = $(this).attr('id');
