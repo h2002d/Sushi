@@ -5,85 +5,52 @@
 }
 
 <div class="jumbotron">
+    <h3>Զամբյուղ</h3>
+    <table>
+        <tr class="card-details-header">
+            <th>Անվանում</th>
+            <th>Քանակ</th>
+            <th>Գին</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
 
-    @foreach (var item in Model)
-    {
-        <div class="row orderItem" id="@(item.product.Id+"itemCard")">
-            <div class="row">
-                <div class="col-md-3">
-                    <p>Название</p>
-                </div>
-              
-                <div class="col-md-2">
-                    <p>Количество</p>
-                </div>
-                <div class="col-md-2">
-                    <p>Цена</p>
-                </div>
-                <div class="col-md-2">
-                </div>
-            </div>
-            <hr class="productPagehr" />
-            <div class="row ">
-                <div class="col-md-3">
+            <tr id="@(item.product.Id+"itemCard")">
+                <td>
+
                     <p>@item.product.ProductTitle</p>
                     <img src="@item.product.ImageSource" class="imageHeader" />
-                </div>
-             
-                <div class="col-md-2">
+                </td>
+
+                <td>
                     <p>@item.ProductQuantity</p>
-                </div>
-                <div class="col-md-2">
+                </td>
+                <td>
                     <p>@item.product.Price руб.</p>
                     @if (@item.product.PriceDiscounted != 0)
                 {
-                        <del> @item.product.PriceDiscounted</del>
+                    <del> @item.product.PriceDiscounted</del>
                     }
-                </div>
-                <div class="col-md-2">
+                </td>
+                <td>
                     <a class="removeCard" id="@item.product.Id">Удалить</a>
-                </div>
-            </div>
-        </div>
-        <hr />
-    }
-    @if (Model.Count > 0)
-    {
-    <div class="row" align="right">
-        <p>Сумма заказа:@ViewBag.Sum</p>
-        <input type="button" class="btn btn-default" onclick="orderBtnClick()" value="Оформить заказ" />
-    </div>
-    }
-    else
-    {
-        <div class="row">
-            <p>Корзина пуста</p>
-        </div>
-    }
-    <div class="row">
-        <h2>re:store-family рекомендует:</h2>
-        <hr />
-@foreach (var item in ViewBag.Recommended)
-{
-    <div class="col-md-4">
-      
-        <div class="row product" id="@item.Id" style="font-size:12px; padding:5px; margin-bottom:20px;">
-            <div class="col-md-8 ">
-                <img style="width:100%; height:auto;" src="@item.ImageSource" />
-                <p>#@item.Id @item.ProductTitle</p>
-                <p style="display:inline">
-                    Цена: @item.Price руб.
-                    @if (@item.PriceDiscounted != 0)
-                    {
-                        <del style="display:inline"> @item.PriceDiscounted</del>
-                    }
-                </p>
+                </td>
+            </tr>
+        }
 
-            </div>
-        </div>
-    </div>
-}
-    </div>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td><p>Сумма заказа:@ViewBag.Sum</p>
+            <td>
+                @if (Model.Count > 0)
+                {
+                    <input type="button" class="btn btn-default" onclick="orderBtnClick()" value="Оформить заказ" />
+                }
+            </td>
+        </tr>
+
+    </table>
 </div>
-
-

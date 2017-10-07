@@ -34,7 +34,7 @@
                 ViewBag.CardCount = 0;
             }
 
-        <div class=" col-md-2 card-Header" style="line-height:60px; background-color:rgba(194, 0, 0, 0.65)">@LaserArt.Resource.Basket<img class="cardIcon" src="~/images/cardBasketIcon.png" />   <u>@ViewBag.CardCount</u></a></div>
+        <div class=" col-md-2 card-Header">@LaserArt.Resource.Basket<img class="cardIcon" src="~/images/cardBasketIcon.png" />   <u>@ViewBag.CardCount</u></a></div>
 
         @*<div class=" col-md-3">
                 <div class="inner-addon right-addon">
@@ -48,20 +48,12 @@
 
 
     </div>
-    <div style="position:absolute; width:100%;top:0;z-index:-9999999999;">
-        <div class="w3-content w3-section">
-            @foreach (var item in ViewBag.Sales)
-            {
-                <a class="mySlides" href="@item.link">
-                    <img class="myslideImage" src="@item.image">
-                </a>
-            }
+    @*<div style="position:absolute; width:100%;top:0;z-index:-9999999999;">
 
-        </div>
-    </div>
+        </div>*@
 
     <div style="width:90%; margin:0 auto;">
-   
+
         <div class="col-sm-2" style="padding:0;">
             <div class="row">
                 <div class="col-md-12">
@@ -69,7 +61,7 @@
                 </div>
             </div>
             <div class="sidebar-nav @(this.User.IsInRole("Administrator")?"":"left-sidebar")" align="center">
-                <h2>MENU</h2>
+                <h2 class="menu-h2">MENU</h2>
                 <div class="navbar navbar-default" style="padding:0 30px 0 30px" role="navigation">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
@@ -78,22 +70,22 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                      
+
                     </div>
                     <div class="navbar-collapse collapse sidebar-navbar-collapse">
                         <ul class="nav navbar-nav">
                             @foreach (var item in ViewBag.Categories)
                             {
-                                <li><a href="/home/category/@item.Id">@item.CategoryName</a></li>
+                            <li><a href="/home/category/@item.Id">@item.CategoryName</a></li>
                             }
                             @if (this.User.IsInRole("Administrator"))
                             {
-                                <li>@Html.ActionLink("Добавит продукт", "CreateProduct", "Home")</li>
-                                <li>@Html.ActionLink("Добавит Категорию", "CreateCategory", "Home")</li>
-                                <li>@Html.ActionLink("Заказы", "Order", "Admin")</li>
-                                <li>@Html.ActionLink("Дизайнер", "Sales", "Home")</li>
+                            <li>@Html.ActionLink("Добавит продукт", "CreateProduct", "Home")</li>
+                            <li>@Html.ActionLink("Добавит Категорию", "CreateCategory", "Home")</li>
+                            <li>@Html.ActionLink("Заказы", "Order", "Admin")</li>
+                            <li>@Html.ActionLink("Дизайнер", "Sales", "Home")</li>
 
-                                @Html.Partial("_LoginPartial")
+                            @Html.Partial("_LoginPartial")
                             }
 
                         </ul>
@@ -102,50 +94,33 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-10" style="padding:0 !important;">
+        <div class="col-sm-10" style="padding:0 !important; margin-top:55px;">
+            <div class="w3-content w3-section">
+                @foreach (var item in ViewBag.Sales)
+                {
+                    <a class="mySlides" href="@item.link">
+                        <img class="myslideImage" src="@item.image">
+                    </a>
+                }
+
+            </div>
             <div class="container body-content">
                 @RenderBody()
-                <hr style="border-top:1px solid #000000 !important;" />
-                <footer style="margin-bottom:50px; font-size:10px;">
-
-                    <p>
-                        &copy; @DateTime.Now.Year - Sushi Powered by <a href="https://www.facebook.com/novirarm">Novir+</a>
-                        <br />
-
-                        Հեռ.: <phone>8 (800) 700-19-44</phone> (շուրջօրյա)
-                    </p>
-                </footer>
             </div>
             <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
 
 
         </div>
     </div>
-    @*<div class="toolbar">
+    <div class="toolbar">
         <div class="toolbar-right">
-            @if (Request.Cookies["Cart"] != null)
-            {
-                HttpCookie cookieOld = Request.Cookies["Cart"];
-
-                var value = cookieOld.Value;
-                var idList = Newtonsoft.Json.JsonConvert.DeserializeObject
-                <List<LaserArt.Models.CardModel>>(value);
-                ViewBag.CardCount = idList.Count;
-            }
-            else
-            {
-                ViewBag.CardCount = 0;
-            }
-
-            @*  <img class="cardIcon" src="~/images/cardBasketIcon.png" />            <a href="/home/card">Корзина <u>@ViewBag.CardCount</u> шт.</a>
-            <input type="button" class="btn btn-default footer-btn" onclick="orderBtnClick()" value="Оформить заказ" />
-
+            <a>Powered By Novir</a>
         </div>
-    </div>*@
+    </div>
 
 
 
-  
+
 
 
     @Scripts.Render("~/bundles/jquery")
@@ -187,6 +162,9 @@
             });
             $('.product').click(function () {
                 window.location = "/home/product/" + $(this).attr('id');
+            });
+            $('.item-div').click(function () {
+                window.location = "/home/category/" + $(this).attr('id');
             });
             $('.card-Header').click(function () {
                 window.location = "/home/card/";

@@ -7,6 +7,29 @@
     -o-background-size: cover;
     background-size: cover;
 }
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    font-size:13px;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.menu-h2 {
+    margin-bottom: 0px !important;
+    background-color: rgba(194, 0, 0, 0.65);
+}
+.card-details-header {
+    background-color: rgba(194, 0, 0, 1);
+}
 @media (min-width: 768px) {
     .sidebar-nav .navbar .navbar-collapse {
         padding: 0;
@@ -178,13 +201,13 @@ textarea {
         background-color: #555; /* Add a dark-grey background on hover */
     }
 .toolbar {
-    position: fixed;
+    position: absolute;
     width: 100%;
     z-index: 100;
     left: 0;
     bottom: 0;
-    background: black;
-    z-index:9999999;
+    background-color: rgba(58,58,58, 0.69);
+    z-index: 9999999;
 }
 .toolbar-right {
     float: right;
@@ -219,6 +242,14 @@ textarea {
 }
 #cardQuantity{
     width:50px;
+}
+.card-Header {
+    line-height: 60px;
+    background-color: rgba(194, 0, 0, 0.65);
+    cursor: pointer;
+}
+.card-Header:hover {
+    background-color: rgba(194, 0, 0, 1);
 }
 .cardIcon{
     width:auto;

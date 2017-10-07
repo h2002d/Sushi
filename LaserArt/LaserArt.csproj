@@ -251,10 +251,10 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\backgroundBlur.jpg" />
-    <Content Include="images\box.jpg" />
     <Content Include="images\cardBasketIcon.png" />
-    <Content Include="images\Carousel\box.jpg" />
-    <Content Include="images\Carousel\Logo.png" />
+    <Content Include="images\Carousel\sushi-wallpaper1.jpg" />
+    <Content Include="images\Carousel\sushi-wallpaper2.jpg" />
+    <Content Include="images\menu_back.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">

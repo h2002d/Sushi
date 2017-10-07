@@ -19,7 +19,7 @@ namespace LaserArt.Controllers
     {
         public HomeController()
         {
-           
+            ViewBag.Sales = Models.Sales.GetSalesById(null);
             ViewBag.Categories = LaserArt.Models.Category.GetCategories(null);
         }
         public ActionResult ChangeLanguage(string lang)
@@ -29,18 +29,9 @@ namespace LaserArt.Controllers
         }
         public ActionResult Index()
         {
-            Dictionary<string, List<Product>> categoryList = new Dictionary<string, List<Models.Product>>();
-           
-            var recomended = LaserArt.Models.Product.GetProducts(null).Take(3).ToList();
-            categoryList.Add("Re:Store-Family рекомендует:", recomended);
             var categories = Models.Category.GetCategories(null);
-            foreach(var category in categories)
-            {
-                var productsList = Models.Product.GetProductsByCategoryId(Convert.ToInt32(category.Id)).Take(6).ToList();
-                categoryList.Add(category.CategoryName, productsList);
-            }
-            ViewBag.Sales = Models.Sales.GetSalesById(null);
-            return View(categoryList);
+           
+            return View(categories);
         }
 
         public ActionResult About()
