@@ -258,6 +258,7 @@
     <Content Include="images\Logomakr_3lnzlL.png" />
     <Content Include="images\Logomakr_5OfkrT.png" />
     <Content Include="images\menu_back.jpg" />
+    <Content Include="images\sushi-star-logo_600x600.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">

@@ -286,6 +286,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="images/menu_back.jpg">
       <publishTime>10/07/2017 16:26:55</publishTime>
     </File>
+    <File Include="images/sushi-star-logo_600x600.png">
+      <publishTime>10/08/2017 17:55:18</publishTime>
+    </File>
     <File Include="packages.config">
       <publishTime>10/06/2017 19:44:17</publishTime>
     </File>
@@ -389,7 +392,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/06/2017 19:44:13</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>10/07/2017 15:34:58</publishTime>
+      <publishTime>10/08/2017 17:51:36</publishTime>
     </File>
     <File Include="Views/Home/Order.cshtml">
       <publishTime>10/06/2017 19:44:13</publishTime>
@@ -437,7 +440,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/06/2017 19:44:13</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>10/07/2017 17:02:52</publishTime>
+      <publishTime>10/08/2017 18:13:12</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>10/06/2017 19:44:13</publishTime>

@@ -17,7 +17,7 @@
         {
             @Html.Raw("<div class=\"row\" >");
         }
-        <div id="@category.Id" class="col-md-4 item-div" align="center">
+        <div id="@category.Id" class="col-sm-4 item-div" align="center">
             <img style="width:100%; height:auto;" src="@category.CategoryImage" />
             <p>@category.CategoryName</p>
         </div>
@@ -32,12 +32,22 @@
     }
     <hr />
    <div class="row">
-       <img src="~/images/Logomakr_38fN2N.png" class="col-md-1" />
-       <h4 class="col-md-3">Ընտրեք ուտեստը</h4>
-       <img src="~/images/Logomakr_3lnzlL.png" class="col-md-1">
-       <h4 class="col-md-3">Ավելացրեք զամբյուղ</h4>
-       <img src="~/images/Logomakr_5OfkrT.png" class="col-md-1">
-       <h4 class="col-md-3">Պատվիրեք</h4>
+       <div class="col-sm-4" align="center">
+           <h4 class="col-sm-12">Ընտրեք ուտեստը</h4>
+           <img src="~/images/Logomakr_38fN2N.png" style="width:20%;height:auto;"/>
+       </div>
+       <div class="col-sm-4" align="center">
+           <h4 class="col-sm-12">Ավելացրեք զամբյուղ</h4>
+
+           <img src="~/images/Logomakr_3lnzlL.png" style="width:20%;height:auto;">
+       </div>
+       <div class="col-sm-4" align="center">
+           <h4 class="col-sm-12">Պատվիրեք</h4>
+
+           <img src="~/images/Logomakr_5OfkrT.png" style="width:20%;height:auto;">
+       </div>
+       
+       
    </div>
 </div>
 <script src="~/Scripts/carousel.js"></script>
