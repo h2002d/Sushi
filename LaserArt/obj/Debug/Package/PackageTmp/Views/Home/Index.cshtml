@@ -17,7 +17,7 @@
         {
             @Html.Raw("<div class=\"row\" >");
         }
-        <div id="@category.Id" class="col-md-4 item-div" align="center">
+        <div id="@category.Id" class="col-sm-4 item-div" align="center">
             <img style="width:100%; height:auto;" src="@category.CategoryImage" />
             <p>@category.CategoryName</p>
         </div>
@@ -30,6 +30,40 @@
             @Html.Raw("</div>")
         }
     }
-   
-</div>
-<script src="~/Scripts/carousel.js"></script>
+    <hr />
+    <div class="row how-to" align="center">
+        <p>Պատվիրեք ձեր ցանկացած ուտեստը 3 քայլով</p>
+        <div class="col-sm-4" align="center">
+            <h4 class="col-sm-12">1.Ընտրեք ուտեստը</h4>
+            <img src="~/images/Logomakr_38fN2N.png" style="width:25%;height:auto;" />
+        </div>
+
+        <div class="col-sm-4" align="center">
+            <h4 class="col-sm-12">2.Ավելացրեք զամբյուղ</h4>
+
+            <img src="~/images/Logomakr_3lnzlL.png" style="width:25%;height:auto;">
+        </div>
+
+        <div class="col-sm-4" align="center">
+            <h4 class="col-sm-12">3.Պատվիրեք</h4>
+
+            <img src="~/images/Logomakr_5OfkrT.png" style="width:25%;height:auto;">
+        </div>
+
+
+    </div>
+    <hr />
+
+    <div class="row how-to" align="center">
+
+        <p>ԸՆՏՐԵՔ ՎՃԱՐՄԱՆ ԵՂԱՆԱԿԸ</p>
+
+        <div class="col-sm-12">
+            <img src="~/images/debit_cards.jpg" style="width:60%;height:auto;">
+        </div>
+        <p>ԿԱՄ</p>
+        <div class="col-sm-12">
+            <img src="~/images/payment_cash.png" style="width:15%;height:auto;">
+        </div>
+    </div>
+    <script src="~/Scripts/carousel.js"></script>

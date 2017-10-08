@@ -250,14 +250,17 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\arrow_red.png" />
     <Content Include="images\backgroundBlur.jpg" />
     <Content Include="images\cardBasketIcon.png" />
     <Content Include="images\Carousel\sushi-wallpaper1.jpg" />
     <Content Include="images\Carousel\sushi-wallpaper2.jpg" />
+    <Content Include="images\debit_cards.jpg" />
     <Content Include="images\Logomakr_38fN2N.png" />
     <Content Include="images\Logomakr_3lnzlL.png" />
     <Content Include="images\Logomakr_5OfkrT.png" />
     <Content Include="images\menu_back.jpg" />
+    <Content Include="images\payment_cash.png" />
     <Content Include="images\sushi-star-logo_600x600.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

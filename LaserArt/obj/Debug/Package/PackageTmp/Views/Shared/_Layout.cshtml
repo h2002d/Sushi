@@ -9,9 +9,10 @@
 
 </head>
 <body>
+
     <div class="list-inline top-menu row">
-        <div class="col-md-3" style="font-size:30px;"><a href="/" style="text-decoration:none; color:white;">@LaserArt.Resource.ApplicationName</a></div>
-        <div class="col-md-6">
+        <div class="col-sm-3" style="font-size:30px;"><a href="/"><img style="width:20%;margin-left:75px;" src="~/images/sushi-star-logo_600x600.png"/></a></div>
+        <div class="col-sm-6">
             @* Here I will add Language Switcher *@
             @{
                 foreach (var i in LaserArt.SiteLanguages.AvailableLanguages)
@@ -34,30 +35,20 @@
                 ViewBag.CardCount = 0;
             }
 
-        <div class=" col-md-2 card-Header">@LaserArt.Resource.Basket<img class="cardIcon" src="~/images/cardBasketIcon.png" />   <u>@ViewBag.CardCount</u></a></div>
-
+        <div class=" col-sm-2 card-Header">@LaserArt.Resource.Basket<img class="cardIcon" src="~/images/cardBasketIcon.png" />   <u>@ViewBag.CardCount</u></a></div>
         @*<div class=" col-md-3">
                 <div class="inner-addon right-addon">
                     <i class="glyphicon glyphicon-search" style="color:black"></i>
                     <input type="text" id="searchArea" class="form-control" placeholder="Поиск..." />
                 </div>
             </div>*@
-
-
-
-
-
     </div>
-    @*<div style="position:absolute; width:100%;top:0;z-index:-9999999999;">
-
-        </div>*@
-
-    <div style="width:90%; margin:0 auto;">
+    @*<div style="position:absolute; width:100%;top:0;z-index:-9999999999;"></div>*@
+    <div class="row" style="width:90%; margin:0 auto;height:100%;">
 
         <div class="col-sm-2" style="padding:0;">
             <div class="row">
                 <div class="col-md-12">
-
                 </div>
             </div>
             <div class="sidebar-nav @(this.User.IsInRole("Administrator")?"":"left-sidebar")" align="center">
@@ -112,11 +103,12 @@
 
         </div>
     </div>
-    <div class="toolbar">
+
+    @*<div class="footer">
         <div class="toolbar-right">
             <a>Powered By Novir</a>
         </div>
-    </div>
+    </div>*@
 
 
 
