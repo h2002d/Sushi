@@ -117,10 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddProduct" xml:space="preserve">
+    <value>Ավելացնել ապրանք</value>
+  </data>
   <data name="ApplicationName" xml:space="preserve">
     <value>Սուշի</value>
   </data>
   <data name="Basket" xml:space="preserve">
     <value>Զամբյուղ</value>
+  </data>
+  <data name="CreatOrder" xml:space="preserve">
+    <value>Պատվիրել</value>
+  </data>
+  <data name="DeleteProduct" xml:space="preserve">
+    <value>Հեռացնել</value>
+  </data>
+  <data name="EditProduct" xml:space="preserve">
+    <value>Փոփոխել</value>
+  </data>
+  <data name="HowToBasket" xml:space="preserve">
+    <value>2.Ավելացրեք զամբյուղ</value>
+  </data>
+  <data name="HowToFirst" xml:space="preserve">
+    <value>1.Ընտրեք ուտեստը</value>
+  </data>
+  <data name="HowToHeader" xml:space="preserve">
+    <value>Պատվիրեք ձեր ցանկացած ուտեստը 3 քայլով</value>
+  </data>
+  <data name="HowToOrder" xml:space="preserve">
+    <value>3.Պատվիրեք</value>
+  </data>
+  <data name="OrderAddress" xml:space="preserve">
+    <value>Հասցե</value>
+  </data>
+  <data name="OrderCreated" xml:space="preserve">
+    <value>Ձեր պատվերը հաջողությամբ կատարված է</value>
+  </data>
+  <data name="OrderName" xml:space="preserve">
+    <value>Անուն</value>
+  </data>
+  <data name="OrderPhone" xml:space="preserve">
+    <value>Հեռ․ համար</value>
+  </data>
+  <data name="OrderPrice" xml:space="preserve">
+    <value>Պատվերի գինը</value>
+  </data>
+  <data name="OrderSurname" xml:space="preserve">
+    <value>Ազգանուն</value>
+  </data>
+  <data name="PaymentMethod" xml:space="preserve">
+    <value>ԸՆՏՐԵՔ ՎՃԱՐՄԱՆ ԵՂԱՆԱԿԸ</value>
+  </data>
+  <data name="PaymentOr" xml:space="preserve">
+    <value>ԿԱՄ</value>
+  </data>
+  <data name="PaymentType" xml:space="preserve">
+    <value>ՎՃԱՐՄԱՆ ՏԵՍԱԿԸ:</value>
+  </data>
+  <data name="PaymentTypeCard" xml:space="preserve">
+    <value>Քարտով</value>
+  </data>
+  <data name="PaymentTypeCash" xml:space="preserve">
+    <value>Կանխիկ</value>
+  </data>
+  <data name="ProductCategory" xml:space="preserve">
+    <value>Կատեգորիա</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>Անուն</value>
+  </data>
+  <data name="ProductPrice" xml:space="preserve">
+    <value>Գին</value>
+  </data>
+  <data name="ProductQuantity" xml:space="preserve">
+    <value>Քանակ</value>
+  </data>
+  <data name="ProductSpecification" xml:space="preserve">
+    <value>Ապրանքի մասին</value>
   </data>
 </root>

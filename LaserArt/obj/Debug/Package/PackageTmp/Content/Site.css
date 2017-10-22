@@ -1,13 +1,25 @@
 ﻿body {
     /*padding-top: 50px;*/
     padding-bottom: 20px;
-    background: url("../images/backgroundBlur.jpg") no-repeat center center fixed;
+    background: #1a1a1a;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
-
+#orderDetails {
+    display: none;
+    max-width: 70%;
+    padding: 20px;
+    background: white;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 999999999;
+}
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -271,4 +283,48 @@ textarea {
 }
 .how-to{
     margin-top:80px;
+    margin-bottom:80px;
 }
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: rgba(0, 0, 0, 0);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255, 0, 0, 0.8);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background: rgba(255, 0, 0, 0.4);
+    }
+
+#myWorkContent {
+
+    height: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+    #myWorkContent div {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    #myWorkContent img {
+        border: 0;
+    }

@@ -1,13 +1,18 @@
-﻿@model LaserArt.Models.Product
+﻿
+@model LaserArt.Models.Product
 
 @{
-    ViewBag.Title =Model.ProductTitle;
+    ViewBag.Title = Model.ProductTitle;
 }
+<div class="row" style="float:right;margin-right:10px;">
+    <a onclick="closeOrderDiv()" style="cursor:pointer">X</a>
+
+</div>
 <div class="jumbotron">
-    <h2 class="h1">@Model.ProductTitle</h2>
+    <h2 class="product-header">@Model.ProductTitle</h2>
     @if (this.User.IsInRole("Administrator"))
     {
-        <a id="@Model.Id" class="deleteProduct">Удалить</a>
+        <a id="@Model.Id" class="deleteProduct">@Resource.DeleteProduct</a>
     }
     <div class="container">
         <div class="row">
@@ -27,21 +32,20 @@
                         <img src="@Model.ImageSource3" class="imageHeader iconImg" />
                     </div>
                 </div>
-                </div>
+            </div>
             <div class="col-md-6">
+                @Html.Raw(Model.ProductDescription)
                 <hr class="productPagehr">
-              
+
                 <p> <h class="productpageh3">Цена:</h>@Model.Price руб.</p>
                 @if (@Model.PriceDiscounted != 0)
                 {
                     <del> @Model.PriceDiscounted</del>
                 }
                 <hr class="productPagehr">
-                <input type="number" id="cardQuantity"  value="1" class="form-control"/>
-                <div style="color:red"id="cardQuantityRequired"></div>
-                <input type="button" value="Добавить в корзину +" class="btn btn-default" onclick="addToCard(@Model.Id)"/>
-                <h2 class="productpageh3">Техническое описание</h2>
-                @Html.Raw(Model.ProductDescription)
+                <input type="number" id="cardQuantity" value="1" class="form-control" />
+                <div style="color:red" id="cardQuantityRequired"></div>
+                <input type="button" value="Добавить в корзину +" class=" btn-red btn btn-default"  onclick="addToCard(@Model.Id)" />
                 <hr class="productPagehr">
             </div>
         </div>

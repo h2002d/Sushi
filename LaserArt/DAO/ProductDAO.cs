@@ -78,7 +78,13 @@ namespace LaserArt.DAO
                             Product newProduct = new Product();
                             newProduct.Id = Convert.ToInt32(rdr["Id"]);
                             newProduct.ProductTitle = rdr["ProductTitle_"+culture].ToString();
+                            newProduct.ProductTitle_AM = rdr["ProductTitle_AM"].ToString();
+                            newProduct.ProductTitle_EN = rdr["ProductTitle_EN"].ToString();
+                            newProduct.ProductTitle_RU = rdr["ProductTitle_RU"].ToString();
                             newProduct.ProductDescription = rdr["ProductDescription_"+culture].ToString();
+                            newProduct.ProductDescription_AM = rdr["ProductDescription_AM"].ToString();
+                            newProduct.ProductDescription_RU = rdr["ProductDescription_RU"].ToString();
+                            newProduct.ProductDescription_EN = rdr["ProductDescription_EN"].ToString();
                             newProduct.ImageSource = rdr["ImageSource"].ToString();
                             newProduct.ImageSource1 = rdr["ImageSource1"].ToString();
                             newProduct.ImageSource2 = rdr["ImageSource2"].ToString();

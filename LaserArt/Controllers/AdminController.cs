@@ -9,9 +9,10 @@ namespace LaserArt.Controllers
 {
     public class AdminController : SushiBaseController
     {
-        public AdminController()
+        public AdminController():base()
         {
-            ViewBag.Categories = LaserArt.Models.Category.GetCategories(null);
+            ViewBag.Sales = Models.Sales.GetSalesById(null);
+
         }
         // GET: Admin
         [Authorize(Roles = "Administrator")]

@@ -4,8 +4,8 @@
 <h2>@ViewBag.CategoryName</h2>
 @if (this.User.IsInRole("Administrator"))
         {
-<a href="/home/deleteCategory/@ViewBag.CategoryId">Удалить</a>
-<a href="/home/editCategory/@ViewBag.CategoryId">Изменить</a>
+<a href="/home/deleteCategory/@ViewBag.CategoryId">@Resource.DeleteProduct</a>
+<a href="/home/editCategory/@ViewBag.CategoryId">@Resource.EditProduct</a>
 
 }
                  <div class="container jumbotron">
@@ -22,14 +22,14 @@
         <div class="col-md-4">
             @if (this.User.IsInRole("Administrator"))
             {
-            <a href="/home/editproduct/@item.Id">Изменить</a>
+            <a href="/home/editproduct/@item.Id">@Resource.EditProduct</a>
             }
             <div class="row product" id="@item.Id" style="font-size:12px; padding:5px; margin-bottom:20px;">
                 <div class="col-md-8 ">
                     <img style="width:100%; height:auto;" src="@item.ImageSource" />
                     <p>#@item.Id @item.ProductTitle</p>
                     <p style="display:inline">
-                        Цена: @item.Price руб.
+                        @Resource.ProductPrice: @item.Price AMD.
                         @if (@item.PriceDiscounted != 0)
                         {
                             <del style="display:inline"> @item.PriceDiscounted</del>

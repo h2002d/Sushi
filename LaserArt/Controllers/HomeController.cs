@@ -17,10 +17,10 @@ namespace LaserArt.Controllers
 {
     public class HomeController : SushiBaseController
     {
-        public HomeController()
+        public HomeController():base()
         {
+           
             ViewBag.Sales = Models.Sales.GetSalesById(null);
-            ViewBag.Categories = LaserArt.Models.Category.GetCategories(null);
         }
         public ActionResult ChangeLanguage(string lang)
         {
@@ -30,7 +30,7 @@ namespace LaserArt.Controllers
         public ActionResult Index()
         {
             var categories = Models.Category.GetCategories(null);
-           
+            ViewBag.Sales = Models.Sales.GetSalesById(null);
             return View(categories);
         }
 
@@ -125,7 +125,7 @@ namespace LaserArt.Controllers
         public ActionResult Product(int id)
         {
             var product = LaserArt.Models.Product.GetProducts(id).FirstOrDefault();
-            return View(product);
+            return PartialView("_ProductPartial",product);
         }
 
         public ActionResult Category(int id)
@@ -133,6 +133,7 @@ namespace LaserArt.Controllers
             var category = LaserArt.Models.Category.GetCategories(id).FirstOrDefault();
             ViewBag.CategoryName = category.CategoryName;
             ViewBag.CategoryId = id;
+            ViewBag.Category = Models.Category.GetCategories(null);
             var products = LaserArt.Models.Product.GetProductsByCategoryId(id);
             return View(products);
         }

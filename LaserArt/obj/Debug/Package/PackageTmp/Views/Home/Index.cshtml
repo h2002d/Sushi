@@ -4,66 +4,32 @@
     ViewBag.Title = "Главная";
 }
 
-
-<div class="container jumbotron" style="padding-top:5px !important;">
-    <div class="row" align="left">
-        @ViewBag.Info
-    </div>
-    @{int i = 0; }
-    @foreach (var category in Model)
+<div class="w3-content w3-section" style="position:absolute; top:0;left:0;">
+    @foreach (var item in ViewBag.Sales)
     {
-
-        if (i == 0 || i % 3 == 0)
-        {
-            @Html.Raw("<div class=\"row\" >");
-        }
-        <div id="@category.Id" class="col-sm-4 item-div" align="center">
-            <img style="width:100%; height:auto;" src="@category.CategoryImage" />
-            <p>@category.CategoryName</p>
-        </div>
-
-
-
-        i++;
-        if (i != 0 && i % 3 == 0 || i == Model.Count)
-        {
-            @Html.Raw("</div>")
-        }
+        <a class="mySlides" href="@item.link">
+            <img class="myslideImage" src="@item.image">
+        </a>
     }
-    <hr />
-    <div class="row how-to" align="center">
-        <p>Պատվիրեք ձեր ցանկացած ուտեստը 3 քայլով</p>
-        <div class="col-sm-4" align="center">
-            <h4 class="col-sm-12">1.Ընտրեք ուտեստը</h4>
-            <img src="~/images/Logomakr_38fN2N.png" style="width:25%;height:auto;" />
-        </div>
 
-        <div class="col-sm-4" align="center">
-            <h4 class="col-sm-12">2.Ավելացրեք զամբյուղ</h4>
+</div>
 
-            <img src="~/images/Logomakr_3lnzlL.png" style="width:25%;height:auto;">
-        </div>
-
-        <div class="col-sm-4" align="center">
-            <h4 class="col-sm-12">3.Պատվիրեք</h4>
-
-            <img src="~/images/Logomakr_5OfkrT.png" style="width:25%;height:auto;">
-        </div>
+<div class="row">
+    <div id="image-head" class="image-head">
+        <div class="centering-hack">
 
 
-    </div>
-    <hr />
-
-    <div class="row how-to" align="center">
-
-        <p>ԸՆՏՐԵՔ ՎՃԱՐՄԱՆ ԵՂԱՆԱԿԸ</p>
-
-        <div class="col-sm-12">
-            <img src="~/images/debit_cards.jpg" style="width:60%;height:auto;">
-        </div>
-        <p>ԿԱՄ</p>
-        <div class="col-sm-12">
-            <img src="~/images/payment_cash.png" style="width:15%;height:auto;">
+            <h1 id="changeText"></h1>
+            <div id="myWorkContent">
+                @foreach (var category in Model)
+                {
+                    <div id="@category.Id" class="col-sm-4 item-div" style="width:10%;position:relative;color:white;" align="center">
+                        <img style="width:100%; height:auto;" src="@category.CategoryImage" />
+                        <p>@category.CategoryName</p>
+                    </div>
+                }
+            </div>
         </div>
     </div>
-    <script src="~/Scripts/carousel.js"></script>
+
+</div>

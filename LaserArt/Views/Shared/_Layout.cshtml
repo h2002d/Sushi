@@ -6,109 +6,84 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <script type="text/javascript">
+        $('#myWorkContent').width($(window).width());
+    </script>
 </head>
 <body>
+    @{
+        ViewBag.Categories = LaserArt.Models.Category.GetCategories(null);
 
+    }
     <div class="list-inline top-menu row">
-        <div class="col-sm-3" style="font-size:30px;"><a href="/"><img style="width:20%;margin-left:75px;" src="~/images/sushi-star-logo_600x600.png"/></a></div>
+
+        <div class="col-sm-3" style="font-size:30px;"><a href="/"><img style="width:60%;margin-left:75px;" src="~/images/sushi-star-logo_600x600.png" /></a></div>
+
         <div class="col-sm-6">
+            <div class="row" style="line-height: 60px; text-align: center;">
+                Тел.+374897867
+            </div>
+            <div class="row">
+                <ul class="col-sm-12 hr">
+
+                    <li class="li"> ДОСТАВКА </li>
+                    <li class="li">О нас </li>
+                    <li class="li">Связь </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-3">
             @* Here I will add Language Switcher *@
             @{
                 foreach (var i in LaserArt.SiteLanguages.AvailableLanguages)
                 {
-                    @Html.ActionLink(i.LangFullName, "ChangeLanguage", "Home", new { lang = i.LangCultureName }, new { @class = "headerText" }) <text>&nbsp;</text>
+            @Html.ActionLink(i.LangFullName, "ChangeLanguage", "Home", new { lang = i.LangCultureName }, new { @class = "headerText" }) <text>&nbsp;</text>
                 }
             }
-        </div>
-        @if (Request.Cookies["Cart"] != null)
-            {
-                HttpCookie cookieOld = Request.Cookies["Cart"];
 
-                var value = cookieOld.Value;
-                var idList = Newtonsoft.Json.JsonConvert.DeserializeObject
-                <List<LaserArt.Models.CardModel>>(value);
-                ViewBag.CardCount = idList.Count;
-            }
-            else
-            {
-                ViewBag.CardCount = 0;
-            }
+        </div>
+
+
+        @if (Request.Cookies["Cart"] != null)
+        {
+            HttpCookie cookieOld = Request.Cookies["Cart"];
+
+            var value = cookieOld.Value;
+            var idList = Newtonsoft.Json.JsonConvert.DeserializeObject
+            <List<LaserArt.Models.CardModel>>(value);
+            ViewBag.CardCount = idList.Count;
+        }
+        else
+        {
+            ViewBag.CardCount = 0;
+        }
 
         <div class=" col-sm-2 card-Header">@LaserArt.Resource.Basket<img class="cardIcon" src="~/images/cardBasketIcon.png" />   <u>@ViewBag.CardCount</u></a></div>
-        @*<div class=" col-md-3">
-                <div class="inner-addon right-addon">
-                    <i class="glyphicon glyphicon-search" style="color:black"></i>
-                    <input type="text" id="searchArea" class="form-control" placeholder="Поиск..." />
-                </div>
-            </div>*@
+
     </div>
-    @*<div style="position:absolute; width:100%;top:0;z-index:-9999999999;"></div>*@
+
     <div class="row" style="width:90%; margin:0 auto;height:100%;">
 
-        <div class="col-sm-2" style="padding:0;">
-            <div class="row">
-                <div class="col-md-12">
-                </div>
-            </div>
-            <div class="sidebar-nav @(this.User.IsInRole("Administrator")?"":"left-sidebar")" align="center">
-                <h2 class="menu-h2">MENU</h2>
-                <div class="navbar navbar-default" style="padding:0 30px 0 30px" role="navigation">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
-                            <span class="sr-only"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
 
-                    </div>
-                    <div class="navbar-collapse collapse sidebar-navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            @foreach (var item in ViewBag.Categories)
-                            {
-                            <li><a href="/home/category/@item.Id">@item.CategoryName</a></li>
-                            }
-                            @if (this.User.IsInRole("Administrator"))
-                            {
-                            <li>@Html.ActionLink("Добавит продукт", "CreateProduct", "Home")</li>
-                            <li>@Html.ActionLink("Добавит Категорию", "CreateCategory", "Home")</li>
-                            <li>@Html.ActionLink("Заказы", "Order", "Admin")</li>
-                            <li>@Html.ActionLink("Дизайнер", "Sales", "Home")</li>
+        <div class="col-sm-12" style="padding:0 !important; margin-top:55px;">
 
-                            @Html.Partial("_LoginPartial")
-                            }
-
-                        </ul>
-
-                    </div><!--/.nav-collapse -->
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-10" style="padding:0 !important; margin-top:55px;">
-            <div class="w3-content w3-section">
-                @foreach (var item in ViewBag.Sales)
-                {
-                    <a class="mySlides" href="@item.link">
-                        <img class="myslideImage" src="@item.image">
-                    </a>
-                }
-
-            </div>
             <div class="container body-content">
                 @RenderBody()
             </div>
             <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
+            <div align="center" id="orderDetails">
 
+                Բեռնվում է․․․
+            </div>
 
         </div>
     </div>
 
     @*<div class="footer">
-        <div class="toolbar-right">
-            <a>Powered By Novir</a>
-        </div>
-    </div>*@
+            <div class="toolbar-right">
+                <a>Powered By Novir</a>
+            </div>
+        </div>*@
 
 
 
@@ -120,8 +95,14 @@
     @RenderSection("scripts", required: false)
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
     <script>tinymce.init({ selector: '#textarea' });</script>
+    <script src="~/Scripts/carousel.js"></script>
     <script type="text/javascript">
 
+
+
+        function closeOrderDiv() {
+            $("#orderDetails").hide();
+        }
         window.onscroll = function () { scrollFunction() };
         function saleDetails() {
             var selected = $('#SaleDropDown').val();
@@ -144,6 +125,7 @@
             //$('.body-content').css("min-height", function () {
             //    return $('.sidebar-nav').height();
             //});
+
             $('#searchArea').bind("enterKey", function (e) {
                 window.location = "/home/Search?query=" + $(this).val();
             });
@@ -153,9 +135,12 @@
                 }
             });
             $('.product').click(function () {
-                window.location = "/home/product/" + $(this).attr('id');
+                $("#orderDetails").show();
+                $('#orderDetails').load("/home/product/" + $(this).attr('id'));
             });
-            $('.item-div').click(function () {
+
+
+            $('.sushiCategory-div').click(function () {
                 window.location = "/home/category/" + $(this).attr('id');
             });
             $('.card-Header').click(function () {
@@ -304,7 +289,63 @@
                 $('#generalImg').attr('src', $(event.target).attr('src'));
             });
         });
+        $(document).ready(function () {
 
+            //cache our items and containers
+            var items = $(".portfolio-item");
+            var scrollContainer = $(".offer-pg-cont");
+
+
+
+            function fetchItem(container, items, isNext) {
+                var i,
+                    scrollLeft = container.scrollLeft();
+
+                //set isNext default to true if not set
+                if (isNext === undefined) {
+                    isNext = true;
+                }
+
+                if (isNext && container[0].scrollWidth - container.scrollLeft() <= container.outerWidth()) {
+                    //we reached the last one so return the first one for looping:
+                    return $(items[0]);
+                }
+
+                //loop through items
+                for (i = 0; i < items.length; i++) {
+
+                    if (isNext && $(items[i]).position().left > 0) {
+                        //this item is our next item as it's the first one with non-negative "left" position
+                        return $(items[i]);
+                    } else if (!isNext && $(items[i]).position().left >= 0) {
+                        //this is our previous item as it's the one with the smallest negative "left" position
+                        //if we're at item 0 just return the last item instead for looping
+                        return i == 0 ? $(items[items.length - 1]) : $(items[i - 1]);
+                    }
+                }
+
+                //nothing found
+                return null;
+            }
+
+
+            function moveToItem(event) {
+                //fetch the next/previous item:
+                var isNext = event.data.direction == "next";
+                var item = isNext ? fetchItem(scrollContainer, items, true) : fetchItem(scrollContainer, items, false);
+
+                if (item) {
+                    //scroll to item
+                    scrollContainer.animate({ "scrollLeft": item.position().left + scrollContainer.scrollLeft() }, 400);
+                }
+            }
+
+            //bind events
+            $(".arrow-left").click({ direction: "prev" }, moveToItem);
+            $(".arrow-right").click({ direction: "next" }, moveToItem);
+
+
+        });
     </script>
     @if (Request.Browser.IsMobileDevice)
     {

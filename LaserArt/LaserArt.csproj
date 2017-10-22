@@ -250,12 +250,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\39799346-sushi-wallpapers.jpg" />
     <Content Include="images\arrow_red.png" />
+    <Content Include="images\b6_l_n.gif" />
+    <Content Include="images\b6_r_n.gif" />
     <Content Include="images\backgroundBlur.jpg" />
     <Content Include="images\cardBasketIcon.png" />
     <Content Include="images\Carousel\sushi-wallpaper1.jpg" />
     <Content Include="images\Carousel\sushi-wallpaper2.jpg" />
     <Content Include="images\debit_cards.jpg" />
+    <Content Include="images\iStock-589415708_field_img_hero_988_380.jpg" />
     <Content Include="images\Logomakr_38fN2N.png" />
     <Content Include="images\Logomakr_3lnzlL.png" />
     <Content Include="images\Logomakr_5OfkrT.png" />
@@ -324,7 +328,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\CreateProduct.cshtml" />
-    <Content Include="Views\Home\Product.cshtml" />
     <Content Include="Views\Home\Category.cshtml" />
     <Content Include="Views\Home\CreateCategory.cshtml" />
     <Content Include="Views\Home\Card.cshtml" />
@@ -336,6 +339,7 @@
     <Content Include="Views\Home\SalesDetails.cshtml" />
     <Content Include="Views\Home\Sales.cshtml" />
     <Content Include="Views\Home\OrderAproval.cshtml" />
+    <Content Include="Views\Home\_ProductPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

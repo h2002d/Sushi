@@ -21,6 +21,7 @@ namespace LaserArt.Controllers
         public AccountController()
         {
             ViewBag.Categories = LaserArt.Models.Category.GetCategories(null);
+            ViewBag.Sales = Models.Sales.GetSalesById(null);
 
         }
 

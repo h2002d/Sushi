@@ -10,14 +10,14 @@
         <div class="row orderItem">
         <div class="row">
             <div class="col-md-3">
-                <p>Название</p>
+                <p>@Resource.ProductName</p>
             </div>
          
             <div class="col-md-3">
-                <p>Количество</p>
+                <p>@Resource.ProductQuantity</p>
             </div>
             <div class="col-md-3">
-                <p>Цена</p>
+                <p>@Resource.ProductPrice</p>
             </div>
         </div>
             <hr class="productPagehr"/>
@@ -31,7 +31,7 @@
                 <p>@item.ProductQuantity</p>
             </div>
             <div class="col-md-3">
-                <p>@item.product.Price руб.</p>
+                <p>@item.product.Price AMD.</p>
                 @if (@item.product.PriceDiscounted != 0)
                 {
                     <del> @item.product.PriceDiscounted</del>
@@ -42,8 +42,8 @@
         <hr />
     }
     <div class="row" align="right">
-        <p>Сумма заказа:@ViewBag.Sum</p>
-        <input type="button" value="Заказать" onclick="goToDetails()"/>
+        <p>@Resource.OrderPrice:@ViewBag.Sum</p>
+        <input type="button" value="@Resource.CreatOrder" onclick="goToDetails()"/>
     </div>
 </div>
 

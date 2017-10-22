@@ -631,4 +631,3 @@ D:\Projects\Sushi\LaserArt\obj\Debug\ru\LaserArt.resources.dll
 D:\Projects\Sushi\LaserArt\obj\Debug\en\LaserArt.resources.dll
 D:\Projects\Sushi\LaserArt\obj\Debug\LaserArt.dll
 D:\Projects\Sushi\LaserArt\obj\Debug\LaserArt.pdb
-D:\Projects\Sushi\LaserArt\obj\Debug\LaserArt.csproj.CoreCompileInputs.cache

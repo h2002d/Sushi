@@ -10,6 +10,10 @@ namespace LaserArt.Models
     {
         public int? Id { get; set; }
         public string CategoryName { get; set; }
+        public string CategoryName_AM { get; set; }
+        public string CategoryName_RU { get; set; }
+        public string CategoryName_EN { get; set; }
+
         public string CategoryImage { get; set; }
 
         public static List<Category> GetCategories(int? id)

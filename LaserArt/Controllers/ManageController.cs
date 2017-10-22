@@ -18,12 +18,14 @@ namespace LaserArt.Controllers
 
         public ManageController()
         {
+            ViewBag.Sales = Models.Sales.GetSalesById(null);
         }
 
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
+            ViewBag.Sales = Models.Sales.GetSalesById(null);
         }
 
         public ApplicationSignInManager SignInManager

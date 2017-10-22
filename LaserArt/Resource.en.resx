@@ -117,10 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddProduct" xml:space="preserve">
+    <value>Add product</value>
+  </data>
   <data name="ApplicationName" xml:space="preserve">
     <value>Sushi</value>
   </data>
   <data name="Basket" xml:space="preserve">
     <value>Basket</value>
+  </data>
+  <data name="CreatOrder" xml:space="preserve">
+    <value>Checkout</value>
+  </data>
+  <data name="DeleteProduct" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="EditProduct" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="HowToBasket" xml:space="preserve">
+    <value>2.Add to card</value>
+  </data>
+  <data name="HowToFirst" xml:space="preserve">
+    <value>1.Choose the dish</value>
+  </data>
+  <data name="HowToHeader" xml:space="preserve">
+    <value>Make order within 3 clicks</value>
+  </data>
+  <data name="HowToOrder" xml:space="preserve">
+    <value>3.Approve order</value>
+  </data>
+  <data name="OrderAddress" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="OrderCreated" xml:space="preserve">
+    <value>YOUR ORDER IS SUCCESSFULLY PREPARED!</value>
+  </data>
+  <data name="OrderName" xml:space="preserve">
+    <value>Your name</value>
+  </data>
+  <data name="OrderPhone" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
+  <data name="OrderPrice" xml:space="preserve">
+    <value>Order price</value>
+  </data>
+  <data name="OrderSurname" xml:space="preserve">
+    <value>Surname</value>
+  </data>
+  <data name="PaymentMethod" xml:space="preserve">
+    <value>CHOOSE THE PAYMENT METHOD</value>
+  </data>
+  <data name="PaymentOr" xml:space="preserve">
+    <value>OR</value>
+  </data>
+  <data name="PaymentType" xml:space="preserve">
+    <value>PAYMENT TYPE:</value>
+  </data>
+  <data name="PaymentTypeCard" xml:space="preserve">
+    <value>With a card</value>
+  </data>
+  <data name="PaymentTypeCash" xml:space="preserve">
+    <value>Cash</value>
+  </data>
+  <data name="ProductCategory" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ProductPrice" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="ProductQuantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="ProductSpecification" xml:space="preserve">
+    <value>Specifications</value>
   </data>
 </root>
