@@ -10,6 +10,7 @@
 </div>
 <div class="jumbotron">
     <h2 class="product-header">@Model.ProductTitle</h2>
+    @Html.Raw(Model.ProductDescription)
     @if (this.User.IsInRole("Administrator"))
     {
         <a id="@Model.Id" class="deleteProduct">@Resource.DeleteProduct</a>
@@ -34,10 +35,10 @@
                 </div>
             </div>
             <div class="col-md-6">
-                @Html.Raw(Model.ProductDescription)
+              
                 <hr class="productPagehr">
 
-                <p> <h class="productpageh3">Цена:</h>@Model.Price руб.</p>
+                <p style="color:rgba(255, 0, 0, 1) ;">@Model.Price руб.</p>
                 @if (@Model.PriceDiscounted != 0)
                 {
                     <del> @Model.PriceDiscounted</del>

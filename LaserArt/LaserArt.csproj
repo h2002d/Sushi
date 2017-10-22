@@ -259,6 +259,10 @@
     <Content Include="images\Carousel\sushi-wallpaper1.jpg" />
     <Content Include="images\Carousel\sushi-wallpaper2.jpg" />
     <Content Include="images\debit_cards.jpg" />
+    <Content Include="images\facebookIcon.png" />
+    <Content Include="images\facebookIconInactive.png" />
+    <Content Include="images\instagramIcon.png" />
+    <Content Include="images\instagramIconInactive.png" />
     <Content Include="images\iStock-589415708_field_img_hero_988_380.jpg" />
     <Content Include="images\Logomakr_38fN2N.png" />
     <Content Include="images\Logomakr_3lnzlL.png" />
@@ -266,6 +270,8 @@
     <Content Include="images\menu_back.jpg" />
     <Content Include="images\payment_cash.png" />
     <Content Include="images\sushi-star-logo_600x600.png" />
+    <Content Include="images\vkIcon.png" />
+    <Content Include="images\vkIconInactive.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">

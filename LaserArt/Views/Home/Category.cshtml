@@ -1,7 +1,7 @@
 ﻿@model List<LaserArt.Models.Product>
 
 
-<h2>@ViewBag.CategoryName</h2>
+<h2 class="product-header">@ViewBag.CategoryName</h2>
 @if (this.User.IsInRole("Administrator"))
 {
     <a href="/home/deleteCategory/@ViewBag.CategoryId">@Resource.DeleteProduct</a>
@@ -15,7 +15,7 @@
             {
                 <div id="@item.Id" class="sushiCategory-div col-sm-3 portfolio-item" align="center">
                     <img src="@item.CategoryImage" class="items" style="width:100%;height:auto;" alt="" />
-                    <p class="text-center text">@item.CategoryName</p>
+                    <p class="text-center text ">@item.CategoryName</p>
                 </div>
             }
         </div>
@@ -35,11 +35,11 @@
             {
                 <a href="/home/editproduct/@item.Id">@Resource.EditProduct</a>
             }
-            <div class="row product" id="@item.Id" style="font-size:12px; padding:5px; margin-bottom:20px;">
+            <div class="row product" id="@item.Id" style="font-size:12px; padding:5px; margin-bottom:20px; cursor:pointer;">
                 <div class="col-md-8 ">
                     <img style="width:100%; height:auto;" src="@item.ImageSource" />
-                    <p>#@item.Id @item.ProductTitle</p>
-                    <p style="display:inline">
+                    <p class="product-header">#@item.Id @item.ProductTitle</p>
+                    <p class="product-header" style="display:inline">
                         @Resource.ProductPrice: @item.Price AMD.
                         @if (@item.PriceDiscounted != 0)
                         {

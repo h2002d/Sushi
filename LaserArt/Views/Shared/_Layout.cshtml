@@ -26,7 +26,7 @@
             <div class="row">
                 <ul class="col-sm-12 hr">
 
-                    <li class="li"> ДОСТАВКА </li>
+                    <li class="li">ДОСТАВКА</li>
                     <li class="li">О нас </li>
                     <li class="li">Связь </li>
                 </ul>
@@ -37,7 +37,7 @@
             @{
                 foreach (var i in LaserArt.SiteLanguages.AvailableLanguages)
                 {
-            @Html.ActionLink(i.LangFullName, "ChangeLanguage", "Home", new { lang = i.LangCultureName }, new { @class = "headerText" }) <text>&nbsp;</text>
+                    @Html.ActionLink(i.LangFullName, "ChangeLanguage", "Home", new { lang = i.LangCultureName }, new { @class = "headerText" }) <text>&nbsp;</text>
                 }
             }
 
@@ -77,13 +77,19 @@
             </div>
 
         </div>
+        <div class="footer">
+            <div class="toolbar-right" style="float:left !important; font-size:10px;">
+                <img src="~/images/facebookIconInactive.png" class="social-media-icons" id="facebookicon" />
+                <img src="~/images/instagramIconInactive.png" class="social-media-icons" id="instagramIcon" />
+                <img src="~/images/vkIconInactive.png" class="social-media-icons" id="vkIcon" />
+
+                <p>© @DateTime.Now.Year All Rights Reserved  by Novir.</p>
+
+            </div>
+        </div>
     </div>
 
-    @*<div class="footer">
-            <div class="toolbar-right">
-                <a>Powered By Novir</a>
-            </div>
-        </div>*@
+
 
 
 
@@ -115,7 +121,9 @@
                 document.getElementById("myBtn").style.display = "none";
             }
         }
+        function changeImageTo(source) {
 
+        }
         // When the user clicks on the button, scroll to the top of the document
         function topFunction() {
             document.body.scrollTop = 0; // For Chrome, Safari and Opera
@@ -174,6 +182,24 @@
                     }
 
                 });
+            });
+            $('#facebookicon').on('mouseover', function () {
+                $(this).attr('src', '/images/facebookIcon.png');
+            });
+            $('#facebookicon').on('mouseout', function () {
+                $(this).attr('src', '/images/facebookIconInactive.png');
+            });
+            $('#vkIcon').on('mouseover', function () {
+                $(this).attr('src', '/images/vkIcon.png');
+            });
+            $('#vkIcon').on('mouseout', function () {
+                $(this).attr('src', '/images/vkIconInactive.png');
+            });
+            $('#instagramIcon').on('mouseover', function () {
+                $(this).attr('src', '/images/instagramIcon.png');
+            });
+            $('#instagramIcon').on('mouseout', function () {
+                $(this).attr('src', '/images/instagramIconInactive.png');
             });
             $('.removeCard').click(function () {
                 var id = $(this).attr('id');
